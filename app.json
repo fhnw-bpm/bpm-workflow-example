@@ -1,0 +1,8 @@
+{
+  "name": "bpm-workflow-example",
+  "description": "bpm-workflow-example",
+  "repository": "https://github.com/fhnw-bpm/bpm-workflow-example/tree/master",
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "logo": "https://avatars3.githubusercontent.com/u/25099178?s=200&v=4",
+  "keywords": ["FHNW"]
+}

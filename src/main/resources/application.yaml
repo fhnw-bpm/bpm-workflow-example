@@ -1,0 +1,34 @@
+camunda:
+  bpm:
+    admin-user:
+      id: demo
+      password: demo
+    filter:
+      create: All Tasks
+    authorization:
+      enabled: false
+
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:h2:file:./data/camunda
+    username: sa
+    password: sa
+## Uncomment the following lines to enable the h2 DB console:
+#  h2:
+#    console:
+#      enabled: true
+#      path: /console
+
+## Uncomment the following lines to change to port number:
+#server:
+#  port: 8081
+
+## Confidential credentials should be kept outside of version control.
+## Copy the following lines to an additional file called application-local.yaml to use a remote database e.g. on Heroku:
+  #spring:
+  #  datasource:
+  #    url: jdbc:postgresql://<host>:<port>/<dbname>?user=<username>&password=<password>&sslmode=require
+  #    username: <username>
+  #    password: <password>
