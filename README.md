@@ -10,6 +10,7 @@ This example project can be used to create a fresh Camunda-based workflow includ
     - [Workflow Modelling](#workflow-modelling)
     - [Model Storage](#model-storage)
 - [3. Testing](#3-testing)
+    - [Ad-hoc Deployment](#ad-hoc-deployment)
     - [Troubleshooting](#troubleshooting)
 - [4. Configuration of Users and Groups](#4-configuration-of-users-and-groups)
     - [Enable Authorisation](#enable-authorisation)
@@ -38,6 +39,8 @@ Try to model the Food Service process using the Camunda modeller.
 > If you just copy existing files, make sure that you create new ids for the process and the messages.
 
 ### Workflow Modelling
+
+> You actually have to options how to model this process. You can do it in a waterfall style (model everything until the end) or do it in an iterative style (step-by-step) with use of the [ad-hoc deployment](#ad-hoc-deployment).
 
 Model the process as follows and check `executable`:
 
@@ -89,6 +92,20 @@ Compile and run the Camunda Spring Boot microservice:
 Once the server has been started, the web-based Camunda web app (tasklist, cockpit, admin) can be requested: [http://localhost:8080/](http://localhost:8080/)
 
 Based on the default configuration in the `application.yaml`, the admin username is `demo`, and the password is as well `demo`.
+
+### Ad-hoc Deployment
+
+Camunda Modeler provides the possibility to deploy models directly from the modelling tool to a running workflow engine. This feature would avoid restarting the engine several times when performing iterative modelling.
+
+> Make sure that your workflow engine is running [as described above](#3-testing).
+
+The configuration and actual deployment of the model can be seen in the following animation:
+
+[![](images/2018-04-10_20h07.gif)](![](images/2018-04-10_20h07.gif))
+
+It may happen that the model is not valid due to some missing technical configuration. The following animation shows how to deal with a potential error and how such an error can be revealed:
+
+[![](images/2018-04-10_20h08.gif)](![](images/2018-04-10_20h08.gif))
 
 ### Troubleshooting
 
